@@ -16,9 +16,9 @@ class RedditPagingSource(private val redditApi: RedditApi) :
             val listing = response.body()?.data
             val redditPosts = listing?.children?.map { it.data }
             LoadResult.Page(
-                redditPosts ?: listOf(),
-                listing?.before,
-                listing?.after
+                data = redditPosts ?: listOf(),
+                prevKey = listing?.before,
+                nextKey = listing?.after
             )
         } catch (exception: IOException) {
             return LoadResult.Error(exception)
