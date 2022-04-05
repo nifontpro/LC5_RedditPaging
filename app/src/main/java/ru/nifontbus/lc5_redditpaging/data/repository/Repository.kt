@@ -12,15 +12,19 @@ import ru.nifontbus.lc5_redditpaging.model.RedditPost
 import javax.inject.Inject
 
 @ExperimentalPagingApi
-class RedditRepo @Inject constructor(
-    private val redditService: RedditApi,
+class Repository @Inject constructor(
+    private val redditApi: RedditApi,
     private val redditDatabase: RedditDatabase
 ) {
     fun fetchPosts(): Flow<PagingData<RedditPost>> {
         return Pager(
-            PagingConfig(pageSize = 40, enablePlaceholders = false, prefetchDistance = 3),
-            remoteMediator = RedditRemoteMediator(redditService, redditDatabase),
+            config = PagingConfig(pageSize = PAGE_SIZE),
+            remoteMediator = RedditRemoteMediator(redditApi, redditDatabase),
             pagingSourceFactory = { redditDatabase.redditPostsDao().getPosts() }
         ).flow
+    }
+
+    companion object {
+        const val PAGE_SIZE = 40
     }
 }

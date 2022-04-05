@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Kotlin/LC5_RedditPaging/app/src/main/res/drawable-v24/ic_comment.xml" value="0.191" />
+        <entry key="..\:/Kotlin/LC5_RedditPaging/app/src/main/res/drawable-v24/ic_star.xml" value="0.191" />
+        <entry key="..\:/Kotlin/LC5_RedditPaging/app/src/main/res/drawable/ic_comment.xml" value="0.191" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
