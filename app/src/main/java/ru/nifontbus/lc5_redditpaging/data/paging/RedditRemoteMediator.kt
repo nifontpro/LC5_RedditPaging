@@ -53,10 +53,9 @@ class RedditRemoteMediator(
         } catch (exception: HttpException) {
             MediatorResult.Error(exception)
         }
-
     }
 
     private suspend fun getRedditKeys(): RedditKeys? {
-        return redditDatabase.redditKeysDao().getRedditKeys().firstOrNull()
+        return redditDatabase.redditKeysDao().getLastKey()
     }
 }
