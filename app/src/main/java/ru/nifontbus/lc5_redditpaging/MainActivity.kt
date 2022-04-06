@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
             items(
                 items = posts,
                 key = { post ->
-                    post.key
+                    post.id
                 }
             ) { post ->
                 post?.let { PostItem(post) }

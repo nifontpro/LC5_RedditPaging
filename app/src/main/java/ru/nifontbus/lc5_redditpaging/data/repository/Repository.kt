@@ -20,11 +20,9 @@ class Repository @Inject constructor(
         return Pager(
             config = PagingConfig(
                 pageSize = PAGE_SIZE,
-                enablePlaceholders = false,
-                prefetchDistance = 3
             ),
             remoteMediator = RedditRemoteMediator(redditApi, redditDatabase),
-            pagingSourceFactory = { redditDatabase.redditPostsDao().getPosts() }
+            pagingSourceFactory = { redditDatabase.redditPostsDao().getAllPosts() }
         ).flow
     }
 

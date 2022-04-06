@@ -4,11 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "redditPosts")
+@Entity
 data class RedditPost(
     @SerializedName("name")
     @PrimaryKey
-    val key: String,
+    val id: String,
     @SerializedName("title")
     val title: String,
     @SerializedName("score")
